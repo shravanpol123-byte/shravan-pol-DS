@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int stack[5];
+    int top = -1;
+    int order;
+
+    cout << "Enter 5 cancelled order numbers:" << endl;
+
+    // Push orders into stack
+    for(int i = 0; i < 5; i++)
+    {
+        cin >> order;
+        top++;
+        stack[top] = order;
+    }
+
+    cout << "\nCancelled orders (most recent first):" << endl;
+
+    // Pop orders from stack
+    while(top >= 0)
+    {
+        cout << stack[top] << endl;
+        top--;
+    }
+
+    return 0;
+}
