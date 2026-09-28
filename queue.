@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int queue[5];
+    int i;
+
+    // Enter 5 orders
+    cout << "Enter 5 customer order numbers:" << endl;
+
+    for(i = 0; i < 5; i++)
+    {
+        cin >> queue[i];
+    }
+
+    // Process the orders
+    cout << "\nProcessing orders:" << endl;
+
+    for(i = 0; i < 5; i++)
+    {
+        cout << "Order processed: " << queue[i] << endl;
+    }
+
+    return 0;
+}
