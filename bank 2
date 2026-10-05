@@ -1,0 +1,27 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main()
+{
+    stack<int> s;
+    int token;
+
+    cout << "Enter 5 token numbers:\n";
+
+    for(int i = 0; i < 5; i++)
+    {
+        cin >> token;
+        s.push(token);
+    }
+
+    cout << "\nService History:\n";
+
+    for(int i = 0; i < 5; i++)
+    {
+        cout << "Token " << s.top() << " served\n";
+        s.pop();
+    }
+
+    return 0;
+}
