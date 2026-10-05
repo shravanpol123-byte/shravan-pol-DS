@@ -1,0 +1,77 @@
+include <iostream>
+#include <queue>
+using namespace std;
+
+int main()
+{
+    queue<int> q;
+    int choice;
+    int token = 1;
+
+    do
+    {
+        cout << "\n1. Issue Token";
+        cout << "\n2. Display Tokens";
+        cout << "\n3. Serve Customer";
+        cout << "\n4. Exit";
+
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        if(choice == 1)
+        {
+            q.push(token);
+            cout << "Token issued: " << token << endl;
+            token++;
+        }
+
+        else if(choice == 2)
+        {
+            if(q.empty())
+            {
+                cout << "No tokens available\n";
+            }
+            else
+            {
+                cout << "Tokens: ";
+
+                queue<int> temp = q;
+
+                while(!temp.empty())
+                {
+                    cout << temp.front() << " ";
+                    temp.pop();
+                }
+
+                cout << endl;
+            }
+        }
+
+        else if(choice == 3)
+        {
+            if(q.empty())
+            {
+                cout << "No customer to serve\n";
+            }
+            else
+            {
+                cout << "Token " << q.front()
+                     << " served\n";
+                q.pop();
+            }
+        }
+
+        else if(choice == 4)
+        {
+            cout << "Program ended\n";
+        }
+
+        else
+        {
+            cout << "Invalid choice\n";
+        }
+
+    } while(choice != 4);
+
+    return 0;
+}
